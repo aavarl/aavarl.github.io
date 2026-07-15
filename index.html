@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> - Aavar Lamichhane</title>
-
+  <title>Aavar Lamichhane</title>
+  
   <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,14 +24,21 @@
 
     .navbar-list {
       display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .navbar-link {
+      padding: 10px 18px !important;
+      white-space: nowrap;
     }
 
     .sidebar-info_more {
-      display: none !important;
+      display: none;
     }
 
     .sidebar-info_more.open {
-      display: block !important;
+      display: block;
     }
 
     .service-icon-box ion-icon {
@@ -48,6 +55,65 @@
       background: hsl(240, 2%, 12%);
       border: 1px solid hsl(240, 2%, 20%);
       display: block;
+    }
+
+    .service-item-title a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .service-item-title a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-form {
+      background: var(--bg-gradient-onyx, hsl(240, 1%, 25%));
+      padding: 20px;
+      border-radius: 14px;
+      margin-top: 20px;
+    }
+
+    .contact-form .form-title {
+      color: var(--white-2, #f2f2f2);
+      font-size: var(--fs-3, 20px);
+      font-weight: var(--fw-500, 500);
+      margin-bottom: 12px;
+    }
+
+    .contact-form p {
+      color: var(--light-gray-70, hsl(0, 0%, 84%));
+      font-size: var(--fs-6, 14px);
+      line-height: 1.6;
+    }
+
+    .contact-form a {
+      color: var(--orange-yellow-crayola, #ffd15b);
+      font-weight: var(--fw-500, 500);
+      text-decoration: none;
+    }
+
+    .contact-form a:hover {
+      text-decoration: underline;
+    }
+
+    /* Desktop-only enlargement of avatar and title. Mobile is untouched below 769px. */
+    @media (min-width: 769px) {
+      .avatar-box {
+        width: 110px !important;
+        height: 110px !important;
+      }
+
+      .avatar-box img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover;
+      }
+
+      .info-content .title {
+        font-size: 15px;
+        line-height: 1.5;
+        margin-top: 8px;
+      }
     }
 
     @media (max-width: 768px) {
@@ -112,17 +178,6 @@
 
           <li class="contact-item">
             <div class="icon-box">
-              <ion-icon name="phone-portrait-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title"></p>
-              <a href="tel:+" class="contact-link"></a>
-            </div>
-          </li>
-
-          <li class="contact-item">
-            <div class="icon-box">
               <ion-icon name="calendar-outline"></ion-icon>
             </div>
 
@@ -143,26 +198,28 @@
             </div>
           </li>
 
-        </ul>
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </div>
 
-        <div class="separator"></div>
+            <div class="contact-info">
+              <p class="contact-title">LinkedIn</p>
+              <a href="https://www.linkedin.com/in/aavar-lamichhane-447ab4421" target="_blank" rel="noopener noreferrer" class="contact-link">View Profile</a>
+            </div>
+          </li>
 
-        <ul class="social-list">
-          <li class="social-item">
-            <a href="#" class="social-link">
-              <ion-icon name="logo-facebook"></ion-icon>
-            </a>
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="school-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Google Scholar</p>
+              <a href="https://scholar.google.com/citations?user=0-fhT1kAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" class="contact-link">View Profile</a>
+            </div>
           </li>
-          <li class="social-item">
-            <a href="#" class="social-link">
-              <ion-icon name="logo-twitter"></ion-icon>
-            </a>
-          </li>
-          <li class="social-item">
-            <a href="#" class="social-link">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
+
         </ul>
       </div>
     </aside>
@@ -203,7 +260,7 @@
 
         <section class="about-text">
           <p>
-            Hello, my name’s Aavar Lamichhane. I’m currently a 10th grade sophomore at John H. Guyer High School. I was born and raised in Denton, Texas for most of my life. However, I did move to Columbia, Missouri for quite some time before moving back to Denton, Texas. 
+            Hello, my name’s Aavar Lamichhane. I’m currently a 10th grade sophomore at John H. Guyer High School. I was born and raised in Denton, Texas for most of my life. However, I did move to Columbia, Missouri for quite some time before moving back to Denton, Texas.
 
           </p>
 
@@ -220,8 +277,9 @@
                 <ion-icon name="hand-left-outline" aria-label="volunteering icon"></ion-icon>
               </div>
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Volunteering</h4>
-                <p class="service-item-text">I volunteer at a medical clinic, events, and a temple in Euless, Texas.</p>
+                <h4 class="h4 service-item-title">Himalaya Health Clinic Volunteer  </h4>
+                <p class="service-item-text">I volunteer at a medical clinic in Euless, Texas called the Himalaya Health Clinic. At this clinic I was given the amazing opportunity to support individuals from many different areas while still being able to contribute to a variety of areas. I strive to help and support people as much as I can which has taught me a field of skills that has strengthened me as an overall person. I can say that my contribution to the Himalaya Health Clinic has taught me many things and opened my eyes to the importance of helping my community.
+</p>
               </div>
             </li>
 
@@ -231,7 +289,8 @@
               </div>
               <div class="service-content-box">
                 <h4 class="h4 service-item-title">Web Development</h4>
-                <p class="service-item-text">I have started researching and learning about Web Development, which I do find very intriguing.</p>
+                <p class="service-item-text">I have recently started researching and learning about web development, and I have found it to be a very interesting and rewarding field. As I explore different aspects of web development, such as how websites are designed, built, and maintained, I continue to discover new concepts that challenge me to think creatively and solve problems in different ways. Learning about programming languages, website structure, and user experience has given me a greater appreciation for the work that goes into creating the websites and applications that people use every day. Although I am still at the beginning of my learning journey, I enjoy taking the time to understand new concepts and applying what I learn through practice. Each new topic motivates me to continue expanding my knowledge and improving my skills. Web development has shown me how technology can be used to create practical solutions, and it has inspired me to continue exploring opportunities to grow in this field.
+</p>
               </div>
             </li>
 
@@ -250,8 +309,9 @@
                 <ion-icon name="basketball-outline" aria-label="sports icon"></ion-icon>
               </div>
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Sports</h4>
-                <p class="service-item-text">I play a couple of sports like soccer and basketball for fun as a side hobby. I find it very captivating and amusing.</p>
+                <h4 class="h4 service-item-title">Colleges</h4>
+                <p class="service-item-text">I was given the very rare opportunity to visit and meet with professors from all over the world to learn about research in their professions. I am particularly interested in the emerging field of study of artificial intelligence in healthcare. Throughout my life I knew I wanted to be a radiologist but ever since my visit with different professors this perspective has changed. I learned that the power of merging AI into healthcare can create something so bewitching it takes you a while to fathom it. 
+</p>
               </div>
             </li>
           </ul>
@@ -265,7 +325,7 @@
 
         <section class="about-text">
           <p>
-            🎯 My main target goal in life is to create something that will help people throughout the world. This can also be something that cures a disease or a conflict throughout the world. Knowing that you have contributed to the world and made a difference is a feeling you will never forget. I encourage you and anyone reading this to do the same.
+             My main target goal in life is to create something that will help people throughout the world. This can also be something that cures a disease or a conflict throughout the world. Knowing that you have contributed to the world and made a difference is a feeling you will never forget. I encourage you and anyone reading this to do the same.
           </p>
         </section>
 
@@ -289,7 +349,8 @@
               </div>
               <div class="service-content-box">
                 <h4 class="h4 service-item-title">Web Development</h4>
-                <p class="service-item-text">I want to develop a major website that helps people in any way. Although, I have not achieved this yet it is on my to do list.</p>
+                <p class="service-item-text">One of the things on my bucket list in life is to establish a website that provides assistance to people in positive ways. I hope to create something that forms a connection between people. Although I know this is a very difficult thing to accomplish I still want to try and execute a plan that does this. Providing a website that helps people, also, creates a positive golden feeling from inside of you that tells you that you have accomplished something magical. 
+                </p>
               </div>
             </li>
 
@@ -299,7 +360,7 @@
               </div>
               <div class="service-content-box">
                 <h4 class="h4 service-item-title">Donate to Charities</h4>
-                <p class="service-item-text">I have lost many close friends and family members to several diseases. This is why I want to donate money to charities or research projects of teams trying to cure diseases.</p>
+                <p class="service-item-text">I hope that by donating and contributing to these efforts I can do my small part to help the researchers continue their important work and bring hope to those and families facing similar challenges. I think that supporting medical research is an investment not only in science and technology, but an investment in the lives of future generations. My own experiences have led me to give back and support efforts with the ability to create a positive impact in the world.</p>
               </div>
             </li>
 
@@ -309,7 +370,7 @@
               </div>
               <div class="service-content-box">
                 <h4 class="h4 service-item-title">Give back to the Community</h4>
-                <p class="service-item-text">Other people and peers have done so much to me which is why I want to give back to them and the community.</p>
+                <p class="service-item-text"> Whether it be supported by doing some little deed, in the form of an volunteering acts or helping on others raising funds for helping my community I am determined to do something which change! That is why I believe returning the favor is not just an opportunity to show gratitude towards those who have helped me, but it also provides us the chance to create an even more powerful and connected community. I hope that serving others will demonstrate a sense of kindness, support and responsibility in other people.
               </div>
             </li>
           </ul>
@@ -323,7 +384,7 @@
 
         <section class="about-text">
           <p>
-    
+   
           </p>
         </section>
 
@@ -336,8 +397,10 @@
                 <ion-icon name="book-outline" aria-label="elementary school icon"></ion-icon>
               </div>
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Sam Houston Elementary School</h4>
-                <p class="service-item-text">I attended Sam Houston Elementary School ever since I came to Texas in 2019.</p>
+                <h4 class="h4 service-item-title">
+                  <a href="https://houstones.dentonisd.org/" target="_blank" rel="noopener noreferrer">Sam Houston Elementary School</a>
+                </h4>
+                <p class="service-item-text">I attended Sam Houston Elementary School ever since I came to Texas in 2019. (2019-2021)</p>
               </div>
             </li>
 
@@ -346,8 +409,10 @@
                 <ion-icon name="library-outline" aria-label="middle school icon"></ion-icon>
               </div>
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Crownover Middle School</h4>
-                <p class="service-item-text">I attended Crownover Middle School once I finished elementary school.</p>
+                <h4 class="h4 service-item-title">
+                  <a href="https://crownoverms.dentonisd.org/" target="_blank" rel="noopener noreferrer">Crownover Middle School</a>
+                </h4>
+                <p class="service-item-text">I attended Crownover Middle School once I finished elementary school. (2021-2025)</p>
               </div>
             </li>
 
@@ -356,8 +421,10 @@
                 <ion-icon name="school-outline" aria-label="high school icon"></ion-icon>
               </div>
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">John H. Guyer High School</h4>
-                <p class="service-item-text">In August of 2025 I started my high school journey after I graduated middle school in May of 2025.</p>
+                <h4 class="h4 service-item-title">
+                  <a href="https://guyerhs.dentonisd.org/" target="_blank" rel="noopener noreferrer">John H. Guyer High School</a>
+                </h4>
+                <p class="service-item-text">In August of 2025 I started my high school journey after I graduated middle school in May of 2025. (Currently In)</p>
               </div>
             </li>
           </ul>
@@ -371,7 +438,7 @@
 
         <section class="about-text">
           <p>
-           🇳🇵 Although I was not born or raised in Nepal both of my parents are from there and were raised there meaning I hold some legacy. I visited my mom’s hometown (Hetauda, Nepal) and my dad’s hometown (Gorkha, Nepal) back in 2023-2024. I stayed there for about 3 months and explored lots of new places. I visited lots of family members I’ve never met before as well. When I came back to America in 2024 I learned a lot from my experience in Nepal which is why this place is extremely crucial to me.
+            Although I was not born or raised in Nepal both of my parents are from there and were raised there meaning I hold some legacy. I visited my mom’s hometown (Hetauda, Nepal) and my dad’s hometown (Gorkha, Nepal) back in 2023-2024. I stayed there for about 3 months and explored lots of new places. I visited lots of family members I’ve never met before as well. When I came back to America in 2024 I learned a lot from my experience in Nepal which is why this place is extremely crucial to me.
           </p>
         </section>
 
@@ -442,43 +509,10 @@ The things listed below are certain events or expierences I have faced in my lif
           <ul class="service-list">
             <li class="service-item">
               <div class="service-icon-box">
-                <ion-icon name="trophy-outline" aria-label="achievement experience icon"></ion-icon>
-              </div>
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Achievements</h4>
-                <p class="service-item-text">Write about an accomplishment or milestone you're proud of.</p>
-                <img class="experience-photo" src="./assets/images/experience-4.jpg" alt="Achievement experience photo" loading="lazy">
-              </div>
-            </li>
-
-            <li class="service-item">
-              <div class="service-icon-box">
-                <ion-icon name="calendar-outline" aria-label="experience icon"></ion-icon>
-              </div>
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Add an experience</h4>
-                <p class="service-item-text">Write about another experience here.</p>
-                <img class="experience-photo" src="./assets/images/experience-5.jpg" alt="Experience photo" loading="lazy">
-              </div>
-            </li>
-
-            <li class="service-item">
-              <div class="service-icon-box">
-                <ion-icon name="calendar-outline" aria-label="experience icon"></ion-icon>
-              </div>
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Add an experience</h4>
-                <p class="service-item-text">Write about another experience here.</p>
-                <img class="experience-photo" src="./assets/images/experience-6.jpg" alt="Experience photo" loading="lazy">
-              </div>
-            </li>
-
-            <li class="service-item">
-              <div class="service-icon-box">
                 <ion-icon name="school-outline" aria-label="academic experience icon"></ion-icon>
               </div>
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">St. Louis 2026</h4>
+                <h4 class="h4 service-item-title">University of Missouri at St. Louis 2026</h4>
                 <p class="service-item-text">In the summer of 2026 I travelled to St. Louis for a wonderful expierence at the University of Missouri at St. Louis working with associate professor Dr. Badri Adhikari. I learned the fundamentals of web development. Now I also learned about AI use in the writing process and reflecting on the writing process. </p>
                 <img class="experience-photo" src="./assets/images/experience-1.jpg" alt="St. Louis 2026 experience photo" loading="lazy">
               </div>
@@ -490,14 +524,14 @@ The things listed below are certain events or expierences I have faced in my lif
               </div>
               <div class="service-content-box">
                 <h4 class="h4 service-item-title">Nepali Clinic 6/21/2026</h4>
-                <p class="service-item-text">On Father's day of 2026 I volunteered at the Himalaya Health Clinic where we cared for 40 patients. This expierence helped many individuals that needed assistance.</p>
+                <p class="service-item-text">I volunteered at the Himalaya Health Clinic on June 21, 2026. During this time, our team was able to assist and provide support to about 40 patients. It was very fulfilling to volunteer at a place where one was able to serve those in need of medical aid by making them feel cared for. The whole day proved to me that even small gestures of kindness and working in collaboration with other people could make a great difference in the life of another person. The experience of volunteering improved my communication and collaboration skills, as well as my understanding of the importance of service to others.</p>
                 <img class="experience-photo" src="./assets/images/experience-2.jpg" alt="Nepali Clinic experience photo" loading="lazy">
               </div>
             </li>
 
             <li class="service-item">
               <div class="service-icon-box">
-                <ion-icon name="airplane-outline" aria-label="travel experience icon"></ion-icon>
+                <ion-icon name="water-outline" aria-label="blood drive icon"></ion-icon>
               </div>
               <div class="service-content-box">
                 <h4 class="h4 service-item-title">4/19/2026 Blood Drive</h4>
@@ -517,7 +551,7 @@ The things listed below are certain events or expierences I have faced in my lif
         <section class="mapbox" data-mapbox>
           <figure>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
+              src="https://maps.google.com/maps?q=Dallas,%20Texas,%20USA&output=embed"
               width="400" height="300" loading="lazy"></iframe>
           </figure>
         </section>
@@ -526,7 +560,7 @@ The things listed below are certain events or expierences I have faced in my lif
           <h3 class="h3 form-title">Get in Touch</h3>
           <p>
             If you'd like to contact me, feel free to reach out at
-            <a href="mailto:aavarlamichhane@gmail.com">aavarlamichhane@gmail.com</a>.
+            <a href="mailto:aavarlamichhane@gmail.com">aavarlamichhane@gmail.com</a>
           </p>
         </section>
       </article>
