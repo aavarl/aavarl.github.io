@@ -33,12 +33,53 @@
       white-space: nowrap;
     }
 
+    /* ---- Sidebar container: allow it to scroll instead of clipping content ---- */
+    .sidebar {
+      overflow-y: auto !important;
+      max-height: 100vh;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+    }
+
+    .sidebar-info {
+      flex-wrap: wrap;
+    }
+
+    /* ---- Show/Hide Contacts button: full-width row instead of an odd inline button ---- */
+    .info_more-btn {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 16px;
+      padding: 10px 0 2px;
+      border-top: 1px solid hsl(240, 2%, 20%);
+      background: transparent;
+      cursor: pointer;
+      color: inherit;
+      font: inherit;
+    }
+
+    .info_more-btn ion-icon {
+      font-size: 18px;
+      transition: transform 0.3s ease;
+    }
+
+    .info_more-btn[aria-expanded="true"] ion-icon {
+      transform: rotate(180deg);
+    }
+
+    /* ---- Smooth expand/collapse instead of an abrupt display:none / display:block jump ---- */
     .sidebar-info_more {
-      display: none;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.4s ease, opacity 0.3s ease;
     }
 
     .sidebar-info_more.open {
-      display: block;
+      opacity: 1;
     }
 
     .service-icon-box ion-icon {
@@ -564,9 +605,39 @@ The things listed below are certain events or expierences I have faced in my lif
       const pages = document.querySelectorAll('[data-page]');
 
       if (sidebarBtn && sidebarMore) {
+        const btnLabel = sidebarBtn.querySelector('span');
+
         sidebarBtn.addEventListener('click', function () {
-          const open = sidebarMore.classList.toggle('open');
-          sidebarBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+          const isOpen = sidebarMore.classList.contains('open');
+
+          if (isOpen) {
+            // Collapse: animate back down to 0 smoothly
+            sidebarMore.style.maxHeight = sidebarMore.scrollHeight + 'px';
+            // force reflow so the browser registers the starting height before animating to 0
+            void sidebarMore.offsetHeight;
+            sidebarMore.style.maxHeight = '0px';
+            sidebarMore.classList.remove('open');
+            sidebarBtn.setAttribute('aria-expanded', 'false');
+            if (btnLabel) btnLabel.textContent = 'Show Contacts';
+          } else {
+            // Expand: animate to the content's real height, not a guessed fixed value
+            sidebarMore.classList.add('open');
+            sidebarMore.style.maxHeight = sidebarMore.scrollHeight + 'px';
+            sidebarBtn.setAttribute('aria-expanded', 'true');
+            if (btnLabel) btnLabel.textContent = 'Hide Contacts';
+
+            // Once expanded, make sure it's scrolled into view within the sidebar
+            setTimeout(function () {
+              sidebarMore.style.maxHeight = 'none';
+            }, 400);
+          }
+        });
+
+        // Keep max-height accurate if the window is resized while open
+        window.addEventListener('resize', function () {
+          if (sidebarMore.classList.contains('open')) {
+            sidebarMore.style.maxHeight = 'none';
+          }
         });
       }
 
