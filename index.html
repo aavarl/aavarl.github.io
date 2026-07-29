@@ -1,6 +1,16 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G8PEBZYHNQ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-G8PEBZYHNQ');
+    </script>
+
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -30,7 +40,6 @@
         cursor: pointer;
       }
 
-      /* ---- Give the nav bar a subtle golden accent border so it reads as a menu ---- */
       .navbar {
         border-color: hsla(45, 100%, 71%, 0.45) !important;
       }
@@ -46,9 +55,6 @@
         white-space: nowrap;
       }
 
-      /* ---- Below the sticky-column breakpoint (mobile + medium screens), let the
-           sidebar grow to its natural height so the contact info is always shown.
-           No inner scrollbar — the main page scrollbar controls everything. ---- */
       @media (max-width: 1249px) {
         .sidebar {
           max-height: none !important;
@@ -60,7 +66,6 @@
         flex-wrap: wrap;
       }
 
-      /* ---- Profile photo: subtle rounded corners at every screen size ---- */
       .avatar-box {
         overflow: hidden;
         border-radius: 12px !important;
@@ -70,7 +75,6 @@
         border-radius: inherit;
       }
 
-      /* ---- Toggle button removed: contact info is always visible ---- */
       .info_more-btn {
         display: none !important;
       }
@@ -82,8 +86,6 @@
         visibility: visible !important;
       }
 
-      /* ---- Let long contact values (e.g. the email) wrap instead of being
-           truncated or overflowing the panel ---- */
       .contact-info {
         min-width: 0;
         max-width: 100%;
@@ -148,12 +150,6 @@
         text-decoration: none;
       }
 
-      .contact-form a:hover {
-        text-decoration: underline;
-        text-underline-offset: 4px;
-      }
-
-      /* Desktop-only enlargement of avatar and title. Mobile is untouched below 769px. */
       @media (min-width: 769px) {
         .avatar-box {
           width: 130px !important;
@@ -174,16 +170,12 @@
         }
       }
 
-      /* ---- On desktop the navbar floats absolutely over the top-right of the
-           article. Push the article content down so its title always sits below
-           the menu row and is never covered. ---- */
       @media (min-width: 1024px) {
         .main-content article {
           padding-top: 75px !important;
         }
       }
 
-      /* ---- Line break in the title only in the desktop sidebar (left column) ---- */
       .title-br {
         display: none;
       }
@@ -193,13 +185,11 @@
           display: inline;
         }
 
-        /* Give the sidebar a little more room so the full name fits on one line */
         .main-content {
           min-width: 70% !important;
           width: 70% !important;
         }
 
-        /* Larger profile photo in the desktop side column */
         .avatar-box {
           width: 160px !important;
           height: 160px !important;
@@ -290,7 +280,7 @@
 
               <div class="contact-info">
                 <p class="contact-title">LinkedIn</p>
-                <a
+                
                   href="https://www.linkedin.com/in/aavar-lamichhane-447ab4421"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -307,7 +297,7 @@
 
               <div class="contact-info">
                 <p class="contact-title">Google Scholar</p>
-                <a
+                
                   href="https://scholar.google.com/citations?user=0-fhT1kAAAAJ&hl=en&oi=ao"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -393,7 +383,7 @@
           <section class="about-text">
             <p>
               I am Aavar Lamichhane, a 10th grade sophomore at
-              <a
+              
                 href="https://guyerhs.dentonisd.org/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -512,7 +502,7 @@
                 </div>
                 <div class="service-content-box">
                   <h4 class="h4 service-item-title">
-                    <a
+                    
                       href="https://houstones.dentonisd.org/"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -535,7 +525,7 @@
                 </div>
                 <div class="service-content-box">
                   <h4 class="h4 service-item-title">
-                    <a
+                    
                       href="https://crownoverms.dentonisd.org/"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -558,7 +548,7 @@
                 </div>
                 <div class="service-content-box">
                   <h4 class="h4 service-item-title">
-                    <a
+                    
                       href="https://guyerhs.dentonisd.org/"
                       target="_blank"
                       rel="noopener noreferrer"
